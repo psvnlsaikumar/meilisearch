@@ -62,7 +62,7 @@ jobs:
             type=raw,value=latest,enable=${{ steps.check-tag-format.outputs.stable == 'true' }}
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           # We do not push tags for the cron jobs, this is only for test purposes
           push: ${{ github.event_name != 'schedule' }}
